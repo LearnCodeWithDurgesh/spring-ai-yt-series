@@ -19,7 +19,7 @@ public class ChatServiceImpl implements ChatService {
     }
 
     @Override
-    public List<Tut> chat(String query) {
+    public String chat(String query) {
 
 //        call the llm for response
 //        String content = chatClient
@@ -30,17 +30,25 @@ public class ChatServiceImpl implements ChatService {
 //                .content();
 
 //        String prompt = "tell me about virat kohli?";=
-        Prompt prompt1 = new Prompt(query);
+//        Prompt prompt1 = new Prompt(query, OpenAiChatOptions.builder()
+//                .model("gpt-4o-mini")
+//                .temperature(0.3)
+//                .maxTokens(100)
+//                .build());
 
-        List<Tut> tutorials = chatClient
+        Prompt prompt = new Prompt(query);
+        //modify this prompt and extra things to prompt make it more interactive
+        String queryStr = "As an expert in coding and programing. Always write program in java . Now reply for this question :{query}";
 
+
+//        prompt template
+//        prompt
+//        get prompt template from resources.....
+        var tutorials = chatClient
                 .prompt()
-                .user(u -> u.text("Tell me about cricket {name}").param("name", "durgesh"))
+                .user(u -> u.text(queryStr).param("query",queryStr))
                 .call()
-                .entity(new ParameterizedTypeReference<List<Tut>>() {
-                });
-
-
+                .content();
         return tutorials;
     }
 

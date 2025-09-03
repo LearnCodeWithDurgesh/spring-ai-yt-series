@@ -11,20 +11,17 @@ public class AiConfig {
 
     @Bean
     public ChatClient chatClient(ChatClient.Builder builder) {
-
         return builder
+                .defaultAdvisors()
                 .defaultSystem("You are a helpful coding assistant. You are an expert in coding.")
-
-                .defaultOptions(
-                        OpenAiChatOptions.builder()
-                                .model("gpt-4o-mini")
-                                .temperature(0.2)
-                                .maxTokens(1000)
-                                .build()
-                )
+                .defaultOptions(OpenAiChatOptions.builder()
+                        .model("gpt-4o-mini")
+                        .temperature(0.3)
+                        .maxTokens(100)
+                        .build())
                 .build();
-
     }
+
 
 //
 //    @Bean(name = "openAiChatClient")
