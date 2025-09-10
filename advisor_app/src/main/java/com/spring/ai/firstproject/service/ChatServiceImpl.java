@@ -41,5 +41,18 @@ public class ChatServiceImpl implements ChatService {
                 ;
     }
 
+    @Override
+    public Flux<String> streamChat(String query) {
+
+        return  this.chatClient
+                .prompt()
+                .system(system-> system.text(this.systemMessage))
+                .user(user-> user.text(this.userMessage).param("concept",query))
+                .stream()
+                .content();
+
+
+    }
+
 
 }
