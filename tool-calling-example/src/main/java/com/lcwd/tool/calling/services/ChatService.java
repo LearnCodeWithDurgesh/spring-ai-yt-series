@@ -1,16 +1,26 @@
 package com.lcwd.tool.calling.services;
 
 import com.lcwd.tool.calling.tools.SimpleDateTimeTool;
+import com.lcwd.tool.calling.tools.WeatherTool;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class ChatService {
     private ChatClient chatClient;
 
-    public ChatService(ChatClient chatClient) {
+
+
+
+    private WeatherTool weatherTool;
+
+    public ChatService(ChatClient chatClient, WeatherTool weatherTool) {
         this.chatClient = chatClient;
+        this.weatherTool = weatherTool;
     }
+
 
 
     // chat method::: get response from llm model
@@ -19,7 +29,7 @@ public class ChatService {
     public String chat(String q) {
         return chatClient
                 .prompt()
-                .tools(new SimpleDateTimeTool())
+                .tools(new SimpleDateTimeTool(),weatherTool)
                 .user(q)
                 .call()
                 .content();
