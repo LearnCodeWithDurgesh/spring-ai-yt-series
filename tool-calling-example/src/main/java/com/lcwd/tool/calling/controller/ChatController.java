@@ -1,7 +1,6 @@
 package com.lcwd.tool.calling.controller;
 
 import com.lcwd.tool.calling.services.ChatService;
-import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
