@@ -3,6 +3,7 @@ package com.substring.helpdesk.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Entity
@@ -12,7 +13,8 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Ticket {
+@ToString
+public class Ticket implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,7 +32,7 @@ public class Ticket {
     private  String description;
 
     @Column(unique = true)
-    private String username;
+    private String email;
 
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
