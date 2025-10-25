@@ -1,0 +1,48 @@
+spring:
+  application:
+    name: "help-desk-backend"
+  #datasource configurations
+  datasource:
+    url: jdbc:mysql://localhost:3306/spring_ai_yt?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY}
+      chat:
+        options:
+          model: gpt-4o-mini
+
+    chat:
+      memory:
+        repository:
+          jdbc:
+            initialize-schema: always
+  profiles:
+    active: dev
+
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
+
+
+#database configurations
+
+another:
+  student: true
