@@ -1,0 +1,14 @@
+# Important Python Topics
+
+- **Basic Syntax**: Indentation, variables, comments
+- **Data Types**: Integers, floats, strings, booleans
+- **Data Structures**: Lists, tuples, dictionaries, sets
+- **Control Flow**: If/else, loops (for/while), comprehensions
+- **Functions**: Definitions, parameters, lambda functions
+- **Modules & Packages**: Importing, creating packages
+- **File Handling**: Reading/writing files, context managers
+- **Error Handling**: Try/except blocks, custom exceptions
+- **Object-Oriented Programming**: Classes, inheritance, polymorphism
+- **Standard Library**: os, sys, datetime, math modules
+- **Third-party Libraries**: NumPy, Pandas, Requests, Flask/Django
+- **Best Practices**: PEP8, type hints, unit testing

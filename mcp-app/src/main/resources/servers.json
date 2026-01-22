@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/Users/durgesh_mac/Desktop/spring_ai_yt/mcp",
+        "/Users/durgesh_mac/Desktop/spring_ai_yt/personal_data"
+      ]
+    }
+  }
+}
