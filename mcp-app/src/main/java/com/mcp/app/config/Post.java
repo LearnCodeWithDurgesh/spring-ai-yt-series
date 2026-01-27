@@ -1,4 +1,4 @@
-package com.mcp.app;
+package com.mcp.app.config;
 
 public record Post(
         Integer userId,

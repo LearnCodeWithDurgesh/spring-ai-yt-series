@@ -1,4 +1,4 @@
-package com.mcp.app;
+package com.mcp.app.config;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
